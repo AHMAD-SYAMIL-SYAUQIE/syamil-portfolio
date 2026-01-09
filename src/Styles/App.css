@@ -240,7 +240,16 @@ body {
 }
 
 @media (max-width: 480px) {
+  .page {
+    padding: 90px 15px 40px;
+  }
+  
   .typing-text {
-    font-size: 1em;
+    font-size: 0.9em;
+    min-height: 35px;
+  }
+  
+  body {
+    font-size: 14px;
   }
 }

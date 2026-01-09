@@ -1,0 +1,217 @@
+/* Mobile Responsive Fixes */
+
+/* Navbar Mobile */
+@media (max-width: 480px) {
+  nav {
+    padding: 12px 15px !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo {
+    font-size: 1.2em !important;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links {
+    gap: 8px !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-links a {
+    padding: 6px 10px !important;
+    font-size: 0.75em !important;
+  }
+}
+
+/* HomePage Mobile Enhancements */
+@media (max-width: 480px) {
+  .home-content {
+    padding: 0 5px !important;
+  }
+
+  .hero-section {
+    gap: 20px !important;
+    padding-bottom: 30px !important;
+  }
+
+  .hero-text p {
+    font-size: 0.9em !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* AboutPage Mobile */
+@media (max-width: 480px) {
+  .about-content {
+    padding: 0 10px !important;
+  }
+
+  .profile-section,
+  .skills-section,
+  .certificates-section {
+    padding: 15px !important;
+  }
+
+  .profile-section h2,
+  .skills-section h2,
+  .certificates-section h2 {
+    font-size: 1.4em !important;
+  }
+}
+
+/* ProjectsPage Mobile */
+@media (max-width: 480px) {
+  .projects-content {
+    padding: 0 10px !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  .project-card {
+    padding: 15px !important;
+  }
+}
+
+/* ContactPage Mobile */
+@media (max-width: 480px) {
+  .contact-content {
+    grid-template-columns: 1fr !important;
+    padding: 0 10px !important;
+    gap: 20px !important;
+  }
+
+  .contact-info-section,
+  .contact-form-section {
+    padding: 15px !important;
+  }
+
+  .form-card {
+    padding: 20px !important;
+  }
+
+  .form-group label {
+    font-size: 0.9em !important;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9em !important;
+    padding: 10px !important;
+  }
+}
+
+/* Features & Advantages Mobile */
+@media (max-width: 480px) {
+  .features-grid,
+  .advantages-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+
+  .feature-card,
+  .advantage-card {
+    padding: 15px !important;
+  }
+
+  .feature-card h3,
+  .advantage-card h3 {
+    font-size: 1.1em !important;
+  }
+
+  .feature-card p,
+  .advantage-card p {
+    font-size: 0.85em !important;
+  }
+}
+
+/* System Status Mobile */
+@media (max-width: 480px) {
+  .system-status {
+    padding: 15px !important;
+  }
+
+  .system-status h3 {
+    font-size: 1.1em !important;
+  }
+
+  .status-item {
+    font-size: 0.85em !important;
+  }
+}
+
+/* MovingBorder Button Mobile */
+@media (max-width: 480px) {
+  .moving-border-container {
+    font-size: 0.9em !important;
+    padding: 12px 20px !important;
+  }
+}
+
+/* Certificates Mobile */
+@media (max-width: 480px) {
+  .certificate-filters {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  .filter-button {
+    font-size: 0.8em !important;
+    padding: 8px 12px !important;
+  }
+
+  .certificates-grid {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+}
+
+/* General Text Adjustments for Small Screens */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.6em !important;
+  }
+
+  h2 {
+    font-size: 1.4em !important;
+  }
+
+  h3 {
+    font-size: 1.2em !important;
+  }
+
+  p {
+    font-size: 0.9em !important;
+    line-height: 1.6 !important;
+  }
+
+  button {
+    font-size: 0.9em !important;
+  }
+}
+
+/* Prevent Horizontal Scroll */
+@media (max-width: 480px) {
+  body,
+  html {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  .app,
+  .page {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  * {
+    max-width: 100% !important;
+  }
+}

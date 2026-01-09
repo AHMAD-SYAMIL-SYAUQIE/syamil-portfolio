@@ -85,16 +85,31 @@
 }
 
 @media (max-width: 768px) {
+  .home-content {
+    padding: 0 10px;
+  }
+
+  .hero-section {
+    padding-bottom: 40px;
+    gap: 30px;
+  }
+
   .hero-name {
-    font-size: 1.8em;
+    font-size: 1.6em;
   }
   
   .greeting-text {
+    font-size: 0.95em;
+  }
+
+  .hero-text p {
     font-size: 1em;
+    margin-bottom: 24px;
   }
 
   .cta-buttons {
     flex-direction: column;
+    gap: 12px;
   }
 
   .btn {
@@ -104,11 +119,39 @@
 }
 
 @media (max-width: 480px) {
+  .home-content {
+    padding: 0 5px;
+    min-height: auto;
+  }
+
+  .hero-section {
+    gap: 20px;
+    padding-bottom: 30px;
+  }
+
   .hero-name {
     font-size: 1.4em;
+    line-height: 1.2;
   }
-  
+
   .greeting-text {
+    font-size: 0.85em;
+  }
+
+  .hero-text p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .cta-buttons {
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
     font-size: 0.9em;
   }
 }

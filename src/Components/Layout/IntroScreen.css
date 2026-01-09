@@ -289,3 +289,42 @@
     left: 95px;
   }
 }
+
+@media (max-width: 480px) {
+  .welcome-text {
+    font-size: 1.5em;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .galaxy-container {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 30px;
+  }
+
+  .galaxy-ring:nth-child(1) {
+    width: 160px;
+    height: 160px;
+    top: 20px;
+    left: 20px;
+  }
+  .galaxy-ring:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    top: 40px;
+    left: 40px;
+  }
+  .galaxy-ring:nth-child(3) {
+    width: 80px;
+    height: 80px;
+    top: 60px;
+    left: 60px;
+  }
+  .galaxy-core {
+    width: 50px;
+    height: 50px;
+    top: 75px;
+    left: 75px;
+  }
+}
