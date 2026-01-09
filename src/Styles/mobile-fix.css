@@ -1,25 +1,58 @@
-/* Mobile Responsive Fixes */
+/* ============================================
+   MOBILE RESPONSIVE FIXES - COMPREHENSIVE
+   ============================================ */
 
-/* Navbar Mobile */
-@media (max-width: 480px) {
+/* Force viewport and prevent overflow */
+html, body {
+  overflow-x: hidden !important;
+  width: 100% !important;
+  max-width: 100vw !important;
+  position: relative !important;
+}
+
+* {
+  box-sizing: border-box !important;
+}
+
+/* ============================================
+   NAVBAR - ALL MOBILE SIZES
+   ============================================ */
+@media (max-width: 768px) {
   nav {
-    padding: 12px 15px !important;
-    flex-wrap: wrap;
-    justify-content: center;
+    padding: 10px 15px !important;
+    flex-direction: column !important;
+    gap: 10px !important;
   }
 
   .logo {
-    font-size: 1.2em !important;
-    margin-bottom: 10px;
-    width: 100%;
-    text-align: center;
+    font-size: 1.3em !important;
+    text-align: center !important;
   }
 
   .nav-links {
-    gap: 8px !important;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
+    gap: 10px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+
+  .nav-links a {
+    padding: 8px 12px !important;
+    font-size: 0.85em !important;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    padding: 8px 10px !important;
+  }
+
+  .logo {
+    font-size: 1.1em !important;
+  }
+
+  .nav-links {
+    gap: 6px !important;
   }
 
   .nav-links a {
@@ -28,92 +61,124 @@
   }
 }
 
-/* HomePage Mobile Enhancements */
+/* ============================================
+   HOME PAGE
+   ============================================ */
+@media (max-width: 768px) {
+  .home-content {
+    padding: 0 15px !important;
+    width: 100% !important;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    padding: 20px 0 !important;
+  }
+
+  .hero-name {
+    font-size: 1.8em !important;
+  }
+
+  .typing-text {
+    font-size: 1.1em !important;
+  }
+
+  .hero-text p {
+    font-size: 1em !important;
+  }
+
+  .cta-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .cta-buttons > * {
+    width: 100% !important;
+  }
+
+  .network-orb-container {
+    width: 280px !important;
+    height: 280px !important;
+    margin: 0 auto !important;
+  }
+}
+
 @media (max-width: 480px) {
   .home-content {
-    padding: 0 5px !important;
+    padding: 0 10px !important;
   }
 
   .hero-section {
     gap: 20px !important;
-    padding-bottom: 30px !important;
+    padding: 15px 0 !important;
+  }
+
+  .hero-name {
+    font-size: 1.4em !important;
+    line-height: 1.3 !important;
+  }
+
+  .greeting-text {
+    font-size: 0.9em !important;
+  }
+
+  .typing-text {
+    font-size: 0.9em !important;
+    min-height: 30px !important;
   }
 
   .hero-text p {
     font-size: 0.9em !important;
     line-height: 1.6 !important;
   }
-}
 
-/* AboutPage Mobile */
-@media (max-width: 480px) {
-  .about-content {
-    padding: 0 10px !important;
+  .network-orb-container {
+    width: 200px !important;
+    height: 200px !important;
   }
 
-  .profile-section,
-  .skills-section,
-  .certificates-section {
-    padding: 15px !important;
-  }
-
-  .profile-section h2,
-  .skills-section h2,
-  .certificates-section h2 {
-    font-size: 1.4em !important;
+  .orb-core {
+    width: 80px !important;
+    height: 80px !important;
   }
 }
 
-/* ProjectsPage Mobile */
-@media (max-width: 480px) {
-  .projects-content {
-    padding: 0 10px !important;
+/* ============================================
+   FEATURES SECTION
+   ============================================ */
+@media (max-width: 768px) {
+  .features-section,
+  .advantages-section {
+    padding: 30px 15px !important;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr !important;
-    gap: 15px !important;
-  }
-
-  .project-card {
-    padding: 15px !important;
-  }
-}
-
-/* ContactPage Mobile */
-@media (max-width: 480px) {
-  .contact-content {
-    grid-template-columns: 1fr !important;
-    padding: 0 10px !important;
-    gap: 20px !important;
-  }
-
-  .contact-info-section,
-  .contact-form-section {
-    padding: 15px !important;
-  }
-
-  .form-card {
-    padding: 20px !important;
-  }
-
-  .form-group label {
-    font-size: 0.9em !important;
-  }
-
-  .form-group input,
-  .form-group textarea {
-    font-size: 0.9em !important;
-    padding: 10px !important;
-  }
-}
-
-/* Features & Advantages Mobile */
-@media (max-width: 480px) {
   .features-grid,
   .advantages-grid {
     grid-template-columns: 1fr !important;
     gap: 15px !important;
+  }
+
+  .feature-card,
+  .advantage-card {
+    padding: 20px !important;
+  }
+
+  .feature-card h3,
+  .advantage-card h3 {
+    font-size: 1.2em !important;
+  }
+
+  .feature-card p,
+  .advantage-card p {
+    font-size: 0.9em !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-section,
+  .advantages-section {
+    padding: 20px 10px !important;
   }
 
   .feature-card,
@@ -132,39 +197,129 @@
   }
 }
 
-/* System Status Mobile */
+/* ============================================
+   SYSTEM STATUS
+   ============================================ */
+@media (max-width: 768px) {
+  .system-status {
+    padding: 20px 15px !important;
+    margin: 20px 0 !important;
+  }
+
+  .status-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+
+  .status-item {
+    padding: 15px !important;
+  }
+}
+
 @media (max-width: 480px) {
   .system-status {
-    padding: 15px !important;
+    padding: 15px 10px !important;
   }
 
   .system-status h3 {
     font-size: 1.1em !important;
   }
 
+  .status-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
   .status-item {
-    font-size: 0.85em !important;
+    padding: 12px !important;
+  }
+
+  .status-value {
+    font-size: 1.3em !important;
+  }
+
+  .status-label {
+    font-size: 0.75em !important;
   }
 }
 
-/* MovingBorder Button Mobile */
+/* ============================================
+   ABOUT PAGE
+   ============================================ */
+@media (max-width: 768px) {
+  .about-content {
+    padding: 0 15px !important;
+  }
+
+  .profile-section,
+  .skills-section,
+  .certificates-section {
+    padding: 20px !important;
+    margin: 15px 0 !important;
+  }
+
+  .profile-section h2,
+  .skills-section h2,
+  .certificates-section h2 {
+    font-size: 1.5em !important;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px !important;
+  }
+}
+
 @media (max-width: 480px) {
-  .moving-border-container {
+  .about-content {
+    padding: 0 10px !important;
+  }
+
+  .profile-section,
+  .skills-section,
+  .certificates-section {
+    padding: 15px !important;
+    margin: 10px 0 !important;
+  }
+
+  .profile-section h2,
+  .skills-section h2,
+  .certificates-section h2 {
+    font-size: 1.3em !important;
+  }
+
+  .profile-section p {
     font-size: 0.9em !important;
-    padding: 12px 20px !important;
+    line-height: 1.6 !important;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+    gap: 10px !important;
+  }
+
+  .skill-card {
+    padding: 12px !important;
+  }
+
+  .skill-card h3 {
+    font-size: 1em !important;
   }
 }
 
-/* Certificates Mobile */
-@media (max-width: 480px) {
+/* ============================================
+   CERTIFICATES
+   ============================================ */
+@media (max-width: 768px) {
   .certificate-filters {
     flex-wrap: wrap !important;
     gap: 8px !important;
+    justify-content: center !important;
   }
 
   .filter-button {
-    font-size: 0.8em !important;
-    padding: 8px 12px !important;
+    font-size: 0.85em !important;
+    padding: 8px 15px !important;
   }
 
   .certificates-grid {
@@ -173,18 +328,236 @@
   }
 }
 
-/* General Text Adjustments for Small Screens */
 @media (max-width: 480px) {
+  .filter-button {
+    font-size: 0.75em !important;
+    padding: 6px 12px !important;
+  }
+
+  .certificate-card {
+    padding: 15px !important;
+  }
+
+  .certificate-card h3 {
+    font-size: 1em !important;
+  }
+
+  .certificate-card p {
+    font-size: 0.85em !important;
+  }
+}
+
+/* ============================================
+   PROJECTS PAGE
+   ============================================ */
+@media (max-width: 768px) {
+  .projects-content {
+    padding: 0 15px !important;
+  }
+
+  .projects-header {
+    padding: 20px 15px !important;
+  }
+
+  .projects-header h1 {
+    font-size: 1.8em !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+  }
+
+  .project-card {
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-content {
+    padding: 0 10px !important;
+  }
+
+  .projects-header {
+    padding: 15px 10px !important;
+  }
+
+  .projects-header h1 {
+    font-size: 1.5em !important;
+  }
+
+  .projects-grid {
+    gap: 15px !important;
+  }
+
+  .project-card {
+    padding: 15px !important;
+  }
+
+  .project-card h3 {
+    font-size: 1.1em !important;
+  }
+
+  .project-card p {
+    font-size: 0.85em !important;
+  }
+
+  .project-tech {
+    font-size: 0.75em !important;
+  }
+}
+
+/* ============================================
+   CONTACT PAGE
+   ============================================ */
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr !important;
+    padding: 0 15px !important;
+    gap: 20px !important;
+  }
+
+  .contact-info-section {
+    padding: 20px !important;
+  }
+
+  .contact-form-section {
+    padding: 20px !important;
+  }
+
+  .form-card {
+    padding: 25px !important;
+  }
+
+  .quick-response-card {
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-content {
+    padding: 0 10px !important;
+    gap: 15px !important;
+  }
+
+  .contact-info-section {
+    padding: 15px !important;
+  }
+
+  .contact-info-section h2 {
+    font-size: 1.4em !important;
+  }
+
+  .contact-form-section {
+    padding: 15px !important;
+  }
+
+  .form-card {
+    padding: 20px !important;
+  }
+
+  .form-card-header h3 {
+    font-size: 1.2em !important;
+  }
+
+  .form-group label {
+    font-size: 0.9em !important;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 0.9em !important;
+    padding: 12px !important;
+  }
+
+  .quick-response-card {
+    padding: 15px !important;
+  }
+
+  .quick-response-card h3 {
+    font-size: 1.1em !important;
+  }
+
+  .quick-response-card p {
+    font-size: 0.85em !important;
+  }
+
+  .availability-status {
+    font-size: 0.85em !important;
+  }
+}
+
+/* ============================================
+   MOVING BORDER BUTTON
+   ============================================ */
+@media (max-width: 768px) {
+  .moving-border-container {
+    font-size: 0.95em !important;
+    padding: 12px 24px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .moving-border-container {
+    font-size: 0.85em !important;
+    padding: 10px 20px !important;
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* ============================================
+   SOCIAL LINKS
+   ============================================ */
+@media (max-width: 480px) {
+  .social-links {
+    gap: 10px !important;
+    justify-content: center !important;
+  }
+
+  .social-link {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .social-link svg {
+    width: 20px !important;
+    height: 20px !important;
+  }
+}
+
+/* ============================================
+   GLOBAL TEXT SIZES
+   ============================================ */
+@media (max-width: 768px) {
   h1 {
-    font-size: 1.6em !important;
+    font-size: 1.8em !important;
   }
 
   h2 {
-    font-size: 1.4em !important;
+    font-size: 1.5em !important;
   }
 
   h3 {
     font-size: 1.2em !important;
+  }
+
+  p {
+    font-size: 0.95em !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em !important;
+  }
+
+  h2 {
+    font-size: 1.3em !important;
+  }
+
+  h3 {
+    font-size: 1.1em !important;
   }
 
   p {
@@ -197,21 +570,100 @@
   }
 }
 
-/* Prevent Horizontal Scroll */
-@media (max-width: 480px) {
-  body,
-  html {
-    overflow-x: hidden !important;
-    max-width: 100vw !important;
-  }
-
-  .app,
+/* ============================================
+   PAGE CONTAINER
+   ============================================ */
+@media (max-width: 768px) {
   .page {
-    overflow-x: hidden !important;
+    padding: 100px 15px 40px !important;
+    width: 100% !important;
     max-width: 100vw !important;
   }
+}
 
-  * {
+@media (max-width: 480px) {
+  .page {
+    padding: 90px 10px 30px !important;
+  }
+}
+
+/* ============================================
+   PREVENT HORIZONTAL SCROLL
+   ============================================ */
+@media (max-width: 768px) {
+  .app,
+  .main-content,
+  .page,
+  .home-content,
+  .about-content,
+  .projects-content,
+  .contact-content {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+
+  img,
+  video,
+  iframe,
+  canvas {
     max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* ============================================
+   INTRO SCREEN
+   ============================================ */
+@media (max-width: 768px) {
+  .galaxy-container {
+    width: 220px !important;
+    height: 220px !important;
+  }
+
+  .welcome-text {
+    font-size: 1.8em !important;
+    padding: 0 20px !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .galaxy-container {
+    width: 180px !important;
+    height: 180px !important;
+  }
+
+  .welcome-text {
+    font-size: 1.4em !important;
+    padding: 0 15px !important;
+  }
+
+  .galaxy-ring:nth-child(1) {
+    width: 140px !important;
+    height: 140px !important;
+    top: 20px !important;
+    left: 20px !important;
+  }
+
+  .galaxy-ring:nth-child(2) {
+    width: 100px !important;
+    height: 100px !important;
+    top: 40px !important;
+    left: 40px !important;
+  }
+
+  .galaxy-ring:nth-child(3) {
+    width: 60px !important;
+    height: 60px !important;
+    top: 60px !important;
+    left: 60px !important;
+  }
+
+  .galaxy-core {
+    width: 40px !important;
+    height: 40px !important;
+    top: 70px !important;
+    left: 70px !important;
   }
 }
