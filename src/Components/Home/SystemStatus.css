@@ -1,0 +1,225 @@
+/* System Status - Clean Horizontal Bar Design */
+.system-status-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 60px 0 40px;
+  margin-top: 40px;
+  animation: fadeInUp 1s ease 0.8s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Decorative Lines */
+.status-line {
+  flex: 1;
+  height: 1px;
+  max-width: 150px;
+  background: linear-gradient(90deg, transparent, rgba(0, 247, 255, 0.5));
+  animation: lineExpand 1.5s ease 1.2s both;
+}
+
+.status-line.right {
+  background: linear-gradient(90deg, rgba(0, 247, 255, 0.5), transparent);
+}
+
+@keyframes lineExpand {
+  from {
+    max-width: 0;
+    opacity: 0;
+  }
+  to {
+    max-width: 150px;
+    opacity: 1;
+  }
+}
+
+/* Main Stats Bar */
+.system-status-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 35px;
+  background: rgba(26, 31, 58, 0.6);
+  border: 1px solid rgba(0, 247, 255, 0.2);
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  animation: barGlow 3s ease-in-out infinite;
+}
+
+@keyframes barGlow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.05);
+    border-color: rgba(0, 247, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(0, 247, 255, 0.15);
+    border-color: rgba(0, 247, 255, 0.35);
+  }
+}
+
+.system-status-bar:hover {
+  border-color: rgba(0, 247, 255, 0.5);
+  box-shadow: 0 8px 40px rgba(0, 247, 255, 0.2);
+  transform: translateY(-3px);
+  animation: none;
+}
+
+/* Individual Stat Item */
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  position: relative;
+  transition: all 0.3s ease;
+  animation: statPopIn 0.5s ease both;
+}
+
+.stat-item:nth-child(1) { animation-delay: 1s; }
+.stat-item:nth-child(2) { animation-delay: 1.15s; }
+.stat-item:nth-child(3) { animation-delay: 1.3s; }
+.stat-item:nth-child(4) { animation-delay: 1.45s; }
+
+@keyframes statPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.stat-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 30px;
+  background: linear-gradient(180deg, transparent, rgba(0, 247, 255, 0.3), transparent);
+}
+
+.stat-item:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+.stat-item:hover .stat-icon {
+  animation: iconBounce 0.5s ease;
+}
+
+.stat-item:hover .stat-value {
+  text-shadow: 0 0 15px rgba(0, 247, 255, 0.8);
+}
+
+@keyframes iconBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.stat-icon {
+  font-size: 1.4em;
+  filter: drop-shadow(0 0 8px rgba(0, 247, 255, 0.5));
+  transition: all 0.3s ease;
+}
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.stat-value {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: #00f7ff;
+  line-height: 1;
+  transition: all 0.3s ease;
+}
+
+.stat-label {
+  font-size: 0.75em;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover .stat-label {
+  color: #aaa;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .system-status-wrapper {
+    padding: 30px 20px;
+  }
+  
+  .status-line {
+    display: none;
+  }
+  
+  .system-status-bar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  
+  .stat-item {
+    padding: 10px 15px;
+  }
+  
+  .stat-item:not(:last-child)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .system-status-bar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  
+  .stat-item {
+    justify-content: center;
+    padding: 12px;
+  }
+  
+  .stat-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .stat-value {
+    font-size: 1em;
+  }
+  
+  .stat-label {
+    font-size: 0.65em;
+  }
+  
+  .stat-icon {
+    font-size: 1.1em;
+  }
+}

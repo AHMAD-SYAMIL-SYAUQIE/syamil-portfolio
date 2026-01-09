@@ -1,0 +1,165 @@
+.skills-section {
+  margin-bottom: 80px;
+}
+
+.skills-title {
+  font-size: 2.5em;
+  color: #00f7ff;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.skill-card {
+  background: rgba(26, 31, 58, 0.5);
+  border: 2px solid rgba(157, 78, 221, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Animated gradient border effect */
+.skill-card::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #9d4edd, #00f7ff, #ff006e, #9d4edd);
+  background-size: 400% 400%;
+  border-radius: 17px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  animation: skillGradientBorder 3s ease infinite;
+}
+
+/* Inner glow effect */
+.skill-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(157, 78, 221, 0.15), transparent 50%);
+  border-radius: 15px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.skill-card:hover {
+  border-color: transparent;
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 
+    0 10px 40px rgba(157, 78, 221, 0.4),
+    0 0 20px rgba(157, 78, 221, 0.2),
+    inset 0 0 20px rgba(157, 78, 221, 0.1);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-card:hover::after {
+  opacity: 1;
+}
+
+/* Click/Active effect - ripple pulse */
+.skill-card:active {
+  transform: translateY(-3px) scale(0.98);
+  box-shadow: 
+    0 5px 25px rgba(157, 78, 221, 0.5),
+    0 0 30px rgba(157, 78, 221, 0.3),
+    inset 0 0 30px rgba(157, 78, 221, 0.2);
+}
+
+.skill-card:active::before {
+  animation: skillGradientBorder 0.5s ease infinite;
+}
+
+@keyframes skillGradientBorder {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Pulse glow animation when hovering */
+.skill-card:hover .skill-progress {
+  animation: pulseGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px #00f7ff;
+  }
+  50% {
+    box-shadow: 0 0 20px #00f7ff, 0 0 30px #9d4edd;
+  }
+}
+
+/* Mobile touch effect */
+@media (hover: none) and (pointer: coarse) {
+  .skill-card:active {
+    border-color: transparent;
+    transform: scale(0.97);
+    box-shadow: 
+      0 8px 30px rgba(157, 78, 221, 0.4),
+      0 0 35px rgba(157, 78, 221, 0.3),
+      inset 0 0 25px rgba(157, 78, 221, 0.15);
+  }
+  
+  .skill-card:active::before {
+    opacity: 1;
+  }
+  
+  .skill-card:active .skill-progress {
+    animation: pulseGlow 1s ease-in-out infinite;
+  }
+}
+
+.skill-card h3 {
+  color: #9d4edd;
+  margin-bottom: 15px;
+  font-size: 1.5em;
+}
+
+.skill-bar {
+  background: rgba(255, 255, 255, 0.1);
+  height: 10px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #00f7ff, #9d4edd);
+  animation: fillBar 2s ease forwards;
+  box-shadow: 0 0 10px #00f7ff;
+}
+
+@keyframes fillBar {
+  from {
+    width: 0%;
+  }
+}

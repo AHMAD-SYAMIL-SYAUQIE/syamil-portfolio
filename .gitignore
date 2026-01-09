@@ -1,0 +1,66 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+
+# Build outputs
+dist
+dist-ssr
+build
+*.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+*.pem
+.vercel
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.tmp
+*.temp
+*~
+
+# Screenshots (optional - uncomment if you don't want to include them)
+# public/screenshots/
+# public/preview.png

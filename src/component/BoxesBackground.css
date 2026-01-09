@@ -1,0 +1,106 @@
+/* ===== OPTIMIZED BOXES BACKGROUND - CSS ONLY ===== */
+
+.boxes-background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  pointer-events: auto;
+  z-index: 0;
+}
+
+/* Grid container */
+.boxes-grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Individual box - CSS only, no JS */
+.box-item {
+  border: 1px solid rgba(0, 247, 255, 0.06);
+  position: relative;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  cursor: crosshair;
+}
+
+/* Hover effect - pure CSS, very lightweight */
+.box-item:hover {
+  border-color: rgba(0, 247, 255, 0.25);
+}
+
+/* Color variants - assigned randomly via JS class */
+.box-item.box-cyan:hover {
+  background-color: rgba(0, 247, 255, 0.2);
+  box-shadow: inset 0 0 15px rgba(0, 247, 255, 0.15);
+}
+
+.box-item.box-purple:hover {
+  background-color: rgba(157, 78, 221, 0.2);
+  box-shadow: inset 0 0 15px rgba(157, 78, 221, 0.15);
+}
+
+.box-item.box-pink:hover {
+  background-color: rgba(255, 0, 110, 0.2);
+  box-shadow: inset 0 0 15px rgba(255, 0, 110, 0.15);
+}
+
+.box-item.box-green:hover {
+  background-color: rgba(0, 255, 136, 0.2);
+  box-shadow: inset 0 0 15px rgba(0, 255, 136, 0.15);
+}
+
+.box-item.box-gold:hover {
+  background-color: rgba(255, 215, 0, 0.2);
+  box-shadow: inset 0 0 15px rgba(255, 215, 0, 0.15);
+}
+
+/* Gradient overlays for edge fading */
+.boxes-gradient-top,
+.boxes-gradient-bottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.boxes-gradient-top {
+  top: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 14, 39, 1) 0%,
+    rgba(10, 14, 39, 0.6) 40%,
+    transparent 100%
+  );
+}
+
+.boxes-gradient-bottom {
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 14, 39, 1) 0%,
+    rgba(10, 14, 39, 0.6) 40%,
+    transparent 100%
+  );
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .boxes-gradient-top,
+  .boxes-gradient-bottom {
+    height: 80px;
+  }
+}
+
+/* ===== REDUCE MOTION FOR ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .box-item {
+    transition: none;
+  }
+}

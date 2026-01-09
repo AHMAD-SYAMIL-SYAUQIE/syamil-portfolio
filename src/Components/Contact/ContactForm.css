@@ -1,0 +1,225 @@
+/* ===== CONTACT FORM STYLES ===== */
+.contact-form {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== FORM GROUP - FLOATING LABEL ===== */
+.form-group {
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.form-group.floating-label {
+  margin-bottom: 30px;
+}
+
+.form-group.floating-label label {
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 1em;
+  font-weight: 400;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: transparent;
+  padding: 0 5px;
+  z-index: 1;
+}
+
+.form-group.floating-label input,
+.form-group.floating-label textarea {
+  width: 100%;
+  padding: 18px 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.form-group.floating-label textarea {
+  resize: vertical;
+  min-height: 140px;
+  line-height: 1.6;
+}
+
+/* Focus & Has Value States */
+.form-group.floating-label input:focus,
+.form-group.floating-label textarea:focus,
+.form-group.floating-label.has-value input,
+.form-group.floating-label.has-value textarea {
+  border-color: rgba(0, 247, 255, 0.5);
+  background: rgba(0, 247, 255, 0.03);
+}
+
+.form-group.floating-label input:focus + label,
+.form-group.floating-label textarea:focus + label,
+.form-group.floating-label.has-value label,
+.form-group.floating-label input:not(:placeholder-shown) + label,
+.form-group.floating-label textarea:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 14px;
+  font-size: 0.8em;
+  color: #00f7ff;
+  background: linear-gradient(180deg, transparent 50%, rgba(15, 18, 35, 1) 50%);
+  padding: 0 8px;
+}
+
+/* Input Highlight Animation */
+.input-highlight {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #00f7ff, #9d4edd);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 0 0 14px 14px;
+}
+
+.form-group.floating-label input:focus ~ .input-highlight,
+.form-group.floating-label textarea:focus ~ .input-highlight {
+  width: calc(100% - 2px);
+}
+
+/* Glow effect on focus */
+.form-group.floating-label input:focus,
+.form-group.floating-label textarea:focus {
+  box-shadow: 
+    0 0 20px rgba(0, 247, 255, 0.15),
+    inset 0 0 20px rgba(0, 247, 255, 0.02);
+}
+
+/* Disabled state */
+.form-group.floating-label input:disabled,
+.form-group.floating-label textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ===== SWEETALERT2 CUSTOM STYLES ===== */
+.swal-custom-popup {
+  border: 2px solid rgba(0, 247, 255, 0.4) !important;
+  border-radius: 20px !important;
+  box-shadow: 
+    0 0 30px rgba(0, 247, 255, 0.3),
+    0 0 60px rgba(157, 78, 221, 0.2),
+    inset 0 0 30px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(10px);
+}
+
+.swal-custom-title {
+  font-family: 'Courier New', monospace !important;
+  font-size: 1.8em !important;
+  background: linear-gradient(90deg, #00f7ff, #9d4edd) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.swal-custom-button {
+  font-family: 'Courier New', monospace !important;
+  font-weight: bold !important;
+  padding: 12px 30px !important;
+  border-radius: 25px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 0 20px rgba(0, 247, 255, 0.4) !important;
+}
+
+.swal-custom-button:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 0 30px rgba(0, 247, 255, 0.6) !important;
+}
+
+/* SweetAlert2 icon animations */
+.swal2-icon.swal2-success {
+  border-color: #00f7ff !important;
+  color: #00f7ff !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-line-tip,
+.swal2-icon.swal2-success .swal2-success-line-long {
+  background-color: #00f7ff !important;
+}
+
+.swal2-icon.swal2-success .swal2-success-ring {
+  border-color: rgba(0, 247, 255, 0.3) !important;
+}
+
+.swal2-icon.swal2-error {
+  border-color: #ff6b6b !important;
+}
+
+.swal2-icon.swal2-error .swal2-x-mark-line-left,
+.swal2-icon.swal2-error .swal2-x-mark-line-right {
+  background-color: #ff6b6b !important;
+}
+
+/* Animate.css fallback */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+}
+
+@keyframes shakeX {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.animate__animated {
+  animation-duration: 0.4s;
+  animation-fill-mode: both;
+}
+
+.animate__faster {
+  animation-duration: 0.3s;
+}
+
+.animate__fadeInUp {
+  animation-name: fadeInUp;
+}
+
+.animate__fadeOutDown {
+  animation-name: fadeOutDown;
+}
+
+.animate__shakeX {
+  animation-name: shakeX;
+}
+
+/* Disabled button state */
+.moving-border-full button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

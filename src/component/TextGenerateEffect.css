@@ -1,0 +1,34 @@
+.text-generate-container {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.text-generate-words {
+  display: inline;
+}
+
+.text-generate-word {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+  background: linear-gradient(90deg, #00f7ff, #9d4edd, #ff006e, #00f7ff);
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textGradientFlow 3s ease infinite;
+  margin-right: 0.3em;
+}
+
+.text-generate-word:last-child {
+  margin-right: 0;
+}
+
+@keyframes textGradientFlow {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}

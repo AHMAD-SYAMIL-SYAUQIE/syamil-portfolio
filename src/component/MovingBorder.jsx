@@ -1,0 +1,119 @@
+import React from "react";
+import {
+  motion,
+  useAnimationFrame,
+  useMotionTemplate,
+  useMotionValue,
+  useTransform,
+} from "motion/react";
+import { useRef } from "react";
+
+export function MovingBorder({
+  borderRadius = "1.75rem",
+  children,
+  as: Component = "button",
+  containerClassName,
+  borderClassName,
+  duration = 2000,
+  className,
+  ...otherProps
+}) {
+  return (
+    <Component
+      className={`moving-border-container ${containerClassName || ""}`}
+      style={{
+        "--border-radius": `calc(${borderRadius} * 0.96)`,
+      }}
+      {...otherProps}
+    >
+      <div
+        className="moving-border-wrapper"
+        style={{ borderRadius }}
+      >
+        <MovingBorderGradient
+          duration={duration}
+          rx="30%"
+          ry="30%"
+        >
+          <div
+            className={`moving-border-gradient ${borderClassName || ""}`}
+          />
+        </MovingBorderGradient>
+      </div>
+
+      <div
+        className={`moving-border-content ${className || ""}`}
+        style={{
+          borderRadius: `calc(${borderRadius} * 0.96)`,
+        }}
+      >
+        {children}
+      </div>
+    </Component>
+  );
+}
+
+export const MovingBorderGradient = ({
+  children,
+  duration = 2000,
+  rx,
+  ry,
+  ...otherProps
+}) => {
+  const pathRef = useRef(null);
+  const progress = useMotionValue(0);
+
+  useAnimationFrame((time) => {
+    const length = pathRef.current?.getTotalLength();
+    if (length) {
+      const pxPerMillisecond = length / duration;
+      progress.set((time * pxPerMillisecond) % length);
+    }
+  });
+
+  const x = useTransform(
+    progress,
+    (val) => pathRef.current?.getPointAtLength(val).x
+  );
+  const y = useTransform(
+    progress,
+    (val) => pathRef.current?.getPointAtLength(val).y
+  );
+
+  const transform = useMotionTemplate`translateX(${x}px) translateY(${y}px) translateX(-50%) translateY(-50%)`;
+
+  return (
+    <>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        className="moving-border-svg"
+        width="100%"
+        height="100%"
+        {...otherProps}
+      >
+        <rect
+          fill="none"
+          width="100%"
+          height="100%"
+          rx={rx}
+          ry={ry}
+          ref={pathRef}
+        />
+      </svg>
+      <motion.div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          display: "inline-block",
+          transform,
+        }}
+      >
+        {children}
+      </motion.div>
+    </>
+  );
+};
+
+export default MovingBorder;

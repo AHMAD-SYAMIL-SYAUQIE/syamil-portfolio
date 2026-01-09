@@ -1,0 +1,291 @@
+/* Intro Screen */
+.intro-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #0a0e27;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  transition: opacity 1s ease;
+  overflow: hidden;
+}
+
+.intro-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.galaxy-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin-bottom: 40px;
+  z-index: 3;
+}
+
+.galaxy-ring {
+  position: absolute;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  border-top-color: #00f7ff;
+  animation: spin 3s linear infinite;
+}
+
+.galaxy-ring:nth-child(1) {
+  width: 250px;
+  height: 250px;
+  top: 25px;
+  left: 25px;
+  animation-duration: 3s;
+}
+
+.galaxy-ring:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  top: 50px;
+  left: 50px;
+  border-top-color: #9d4edd;
+  animation-duration: 2s;
+}
+
+.galaxy-ring:nth-child(3) {
+  width: 150px;
+  height: 150px;
+  top: 75px;
+  left: 75px;
+  border-top-color: #ff006e;
+  animation-duration: 1.5s;
+}
+
+.galaxy-core {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  top: 110px;
+  left: 110px;
+  background: radial-gradient(circle, #00f7ff 0%, #9d4edd 50%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+.welcome-text {
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  position: relative;
+  z-index: 3;
+}
+
+@keyframes gradientFlow {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes glitch {
+  0%,
+  90%,
+  100% {
+    transform: translate(0);
+  }
+  92% {
+    transform: translate(-2px, 2px);
+  }
+  94% {
+    transform: translate(2px, -2px);
+  }
+  96% {
+    transform: translate(-2px, -2px);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.loading-bar {
+  width: 500px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-top: 30px;
+  overflow: hidden;
+  position: relative;
+  z-index: 3;
+}
+
+.loading-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #00f7ff, #9d4edd, #ff006e);
+  animation: loading 3s ease-in-out forwards;
+  box-shadow: 0 0 20px #00f7ff;
+}
+
+@keyframes loading {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+/* Animated Stars */
+.stars {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+/* Galaxy Particles */
+.galaxy-particle {
+  position: absolute;
+  border-radius: 50%;
+  animation: floatParticle ease-in-out infinite;
+  filter: blur(1px);
+}
+
+@keyframes floatParticle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1.2);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-15px, -50px) scale(1);
+    opacity: 0.6;
+  }
+  75% {
+    transform: translate(30px, -20px) scale(1.3);
+    opacity: 0.9;
+  }
+}
+
+/* Nebula Glow */
+.nebula-glow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(157, 78, 221, 0.15) 0%, transparent 70%);
+  animation: nebulaFloat ease-in-out infinite;
+  pointer-events: none;
+  filter: blur(40px);
+}
+
+@keyframes nebulaFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translate(50px, -80px) scale(1.2);
+    opacity: 0.5;
+  }
+  66% {
+    transform: translate(-40px, -120px) scale(0.9);
+    opacity: 0.4;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-text {
+    font-size: 2em;
+  }
+
+  .galaxy-container {
+    width: 250px;
+    height: 250px;
+  }
+
+  .galaxy-ring:nth-child(1) {
+    width: 200px;
+    height: 200px;
+    top: 25px;
+    left: 25px;
+  }
+  .galaxy-ring:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    top: 50px;
+    left: 50px;
+  }
+  .galaxy-ring:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    top: 75px;
+    left: 75px;
+  }
+  .galaxy-core {
+    width: 60px;
+    height: 60px;
+    top: 95px;
+    left: 95px;
+  }
+}

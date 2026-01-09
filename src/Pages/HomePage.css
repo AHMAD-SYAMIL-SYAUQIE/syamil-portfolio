@@ -1,0 +1,114 @@
+.home-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-height: calc(100vh - 150px);
+}
+
+.hero-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding-bottom: 60px;
+}
+
+.hero-text {
+  animation: fadeInLeft 1s ease;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-greeting {
+  margin-bottom: 16px;
+}
+
+.greeting-text {
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.7);
+  display: block;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.hero-name {
+  font-size: 1.9em;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.hero-name .shiny-text {
+  background: linear-gradient(
+    120deg,
+    #00f7ff 0%,
+    #00f7ff 40%,
+    #ffffff 50%,
+    #00f7ff 60%,
+    #00f7ff 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.hero-text p {
+  font-size: 1.1em;
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 32px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: 1.8em;
+  }
+  
+  .greeting-text {
+    font-size: 1em;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 1.4em;
+  }
+  
+  .greeting-text {
+    font-size: 0.9em;
+  }
+}
