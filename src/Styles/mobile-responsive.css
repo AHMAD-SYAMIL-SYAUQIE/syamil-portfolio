@@ -1,0 +1,396 @@
+/* ===== MOBILE RESPONSIVE - DESKTOP LAYOUT (SCALED) ===== */
+
+/* Keep desktop layout on mobile, just scale everything down */
+
+/* Tablet & Mobile Base */
+@media (max-width: 768px) {
+  html {
+    font-size: 13px;
+  }
+
+  .page {
+    padding: 100px 15px 50px !important;
+  }
+
+  nav {
+    padding: 12px 20px !important;
+  }
+
+  .logo {
+    font-size: 1.4em !important;
+  }
+
+  .nav-links {
+    gap: 15px !important;
+  }
+
+  .nav-links a {
+    font-size: 0.9em !important;
+    padding: 8px 15px !important;
+  }
+}
+
+/* Mobile - Scale Down, Keep Layout */
+@media (max-width: 480px) {
+  html {
+    font-size: 11px;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  /* Navbar - Horizontal compact */
+  nav {
+    padding: 10px 15px !important;
+  }
+
+  .logo {
+    font-size: 1.2em !important;
+  }
+
+  .nav-links {
+    gap: 10px !important;
+  }
+
+  .nav-links a {
+    font-size: 0.8em !important;
+    padding: 6px 12px !important;
+  }
+
+  /* Home - Keep desktop grid */
+  .home-content {
+    padding: 0 10px !important;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 25px !important;
+    padding-bottom: 40px !important;
+  }
+
+  .hero-text {
+    padding-right: 10px !important;
+  }
+
+  .hero-visual {
+    padding-left: 10px !important;
+  }
+
+  /* Contact - Keep side by side */
+  .contact-page {
+    padding: 90px 10px 50px !important;
+  }
+
+  .contact-content {
+    grid-template-columns: 0.9fr 1.1fr !important;
+    gap: 15px !important;
+  }
+
+  .form-card,
+  .contact-info-section {
+    padding: 18px 15px !important;
+  }
+
+  /* Form - Prevent iOS zoom */
+  input,
+  textarea,
+  select {
+    font-size: 16px !important;
+    -webkit-appearance: none !important;
+  }
+
+  /* Projects - Keep desktop 2-column grid */
+  .projects-page {
+    padding: 90px 10px 50px !important;
+  }
+
+  .projects-header h1 {
+    font-size: 2.2rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .projects-header p {
+    font-size: 0.95rem !important;
+  }
+
+  .projects-filters {
+    margin-bottom: 25px !important;
+  }
+
+  .filter-buttons {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    padding: 0 10px 10px !important;
+    gap: 8px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .filter-btn,
+  .filter-button {
+    flex-shrink: 0 !important;
+    padding: 8px 14px !important;
+    font-size: 0.85em !important;
+    white-space: nowrap !important;
+    min-height: 44px !important;
+  }
+
+  .search-bar {
+    padding: 10px !important;
+    max-width: 100% !important;
+  }
+
+  .search-bar input {
+    padding: 12px 45px 12px 15px !important;
+    font-size: 16px !important;
+    width: 100% !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr) !important; /* Keep 2 columns like desktop */
+    gap: 12px !important;
+  }
+
+  .project-card {
+    min-height: 320px !important;
+    width: 100% !important;
+  }
+
+  .project-card-image {
+    height: 130px !important;
+  }
+
+  .project-card-content {
+    padding: 12px !important;
+  }
+
+  .project-card-title {
+    font-size: 1.05rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .project-card-description {
+    font-size: 0.82rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 10px !important;
+  }
+
+  .project-tags {
+    gap: 5px !important;
+    flex-wrap: wrap !important;
+    margin-bottom: 10px !important;
+  }
+
+  .project-tag {
+    font-size: 0.7rem !important;
+    padding: 3px 7px !important;
+  }
+
+  .project-links {
+    gap: 6px !important;
+  }
+
+  .project-link {
+    padding: 7px 14px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .view-mode-toggle {
+    gap: 5px !important;
+  }
+
+  .view-btn {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  /* Certificates Modal Fix */
+  .certificate-modal,
+  .modal-overlay,
+  .certificate-detail-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+  }
+
+  .modal-overlay {
+    background: rgba(0, 0, 0, 0.95) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+  }
+
+  .certificate-detail-modal {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px 10px !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .certificate-detail-content {
+    max-width: 95vw !important;
+    max-height: 90vh !important;
+    overflow-y: auto !important;
+    background: rgba(15, 18, 35, 0.98) !important;
+    border-radius: 16px !important;
+    padding: 15px !important;
+  }
+
+  .certificate-preview-section {
+    padding: 10px !important;
+  }
+
+  .certificate-image-container {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+
+  .certificate-image-container img {
+    width: 100% !important;
+    max-height: 50vh !important;
+    object-fit: contain !important;
+  }
+
+  .certificate-image-container.zoomed img {
+    max-height: 80vh !important;
+  }
+
+  .certificate-info-section {
+    padding: 15px 10px !important;
+  }
+
+  .modal-close {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 28px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    border: 2px solid #00f7ff !important;
+    color: #00f7ff !important;
+  }
+
+  .close-button {
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 10000 !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 28px !important;
+    border-radius: 50% !important;
+    border: 2px solid #00f7ff !important;
+    color: #00f7ff !important;
+  }
+
+  /* Certificate cards clickable */
+  .certificate-card {
+    cursor: pointer !important;
+    user-select: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .carousel-slide {
+    cursor: pointer !important;
+    user-select: none !important;
+  }
+
+  /* Make sure modal is clickable */
+  .modal-overlay,
+  .certificate-detail-modal,
+  .modal-close,
+  .close-button {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+  }
+
+  .certificate-detail-content {
+    pointer-events: auto !important;
+  }
+
+  /* Carousel arrows bigger for touch */
+  .carousel-button {
+    width: 45px !important;
+    height: 45px !important;
+    font-size: 24px !important;
+  }
+
+  /* Certificate cards - touch friendly */
+  .certificate-card {
+    cursor: pointer !important;
+    min-height: 200px !important;
+  }
+
+  /* Touch improvements */
+  button,
+  a {
+    min-height: 44px !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  /* Prevent zoom on double tap */
+  * {
+    touch-action: manipulation !important;
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Very Small Screens - Only then go single column */
+@media (max-width: 360px) {
+  html {
+    font-size: 10px;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr !important;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Landscape - Full desktop */
+@media (max-width: 920px) and (orientation: landscape) {
+  html {
+    font-size: 12px;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .contact-content {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* Force modal to work properly */
+body.modal-open {
+  overflow: hidden !important;
+}

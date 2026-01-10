@@ -6,7 +6,6 @@ import BoxesBackground from '../component/BoxesBackground'
 import '../component/BoxesBackground.css'
 import useScrollReveal from '../hooks/useScrollReveal'
 import './ContactPage.css'
-import './ContactPage-mobile.css'
 
 const ContactPage = () => {
   useScrollReveal()

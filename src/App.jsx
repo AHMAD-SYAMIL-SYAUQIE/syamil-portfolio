@@ -9,7 +9,7 @@ import AboutPage from './Pages/AboutPage'
 import ProjectsPage from './Pages/ProjectsPage'
 import ContactPage from './Pages/ContactPage'
 import './Styles/App.css'
-import './Styles/mobile-fix.css'
+import './Styles/mobile-responsive.css'
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home')
