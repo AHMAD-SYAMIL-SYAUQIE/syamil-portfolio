@@ -19,8 +19,10 @@ nav {
   font-weight: bold;
   color: #00f7ff;
   letter-spacing: 2px;
-  margin-right: 32px;
   text-shadow: none;
+  flex-grow: 1;
+  text-align: left;
+  margin-right: 0;
 }
 
 .nav-links-desktop {
@@ -28,6 +30,7 @@ nav {
   gap: 24px;
   list-style: none;
   align-items: center;
+  margin-left: auto;
 }
 
 .nav-link-btn {
