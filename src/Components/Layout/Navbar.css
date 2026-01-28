@@ -307,16 +307,21 @@ body.menu-open {
 .navbar-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   width: 100%;
   padding: 0 1.2rem;
   height: 56px;
 }
 
 .navbar-logo {
-  margin: 0 auto;
-  text-align: center;
-  flex: 1 1 0;
+  margin: 0;
+  text-align: left;
+  flex: 0 0 auto;
+  position: static;
+  left: auto;
+  transform: none;
+  font-size: 1.5rem;
+  width: auto;
 }
 
 @media (max-width: 768px) {
