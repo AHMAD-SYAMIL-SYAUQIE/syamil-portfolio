@@ -161,3 +161,109 @@ nav {
     display: flex !important;
   }
 }
+
+/* ACETERNITY HAMBURGER MENU STYLES */
+
+.aceternity-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 38px;
+  height: 38px;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+.aceternity-hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  border-radius: 2px;
+  background: #22d3ee;
+  transition: all 0.35s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 0 8px #22d3ee55;
+}
+.aceternity-hamburger:active span, .aceternity-hamburger:focus span {
+  background: #a21caf;
+  box-shadow: 0 0 12px #a21caf88;
+}
+
+.aceternity-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100vw;
+  pointer-events: auto;
+}
+.aceternity-bg {
+  background: linear-gradient(120deg, #0a0e27 80%, #1a1f3a 100%);
+  opacity: 0.98;
+  backdrop-filter: blur(16px) saturate(1.2);
+  /* Optional: subtle noise overlay */
+  /* background-image: url('/noise.png'); opacity: 0.99; */
+}
+.aceternity-link {
+  font-family: 'Courier New', monospace;
+  font-size: 2rem;
+  color: #fff;
+  padding: 0.5em 1.5em;
+  border-radius: 12px;
+  background: none;
+  border: none;
+  transition: color 0.2s, box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 0 0 transparent;
+  outline: none;
+  position: relative;
+}
+.aceternity-link:hover, .aceternity-link:focus {
+  color: #22d3ee;
+  box-shadow: 0 0 16px #22d3ee55, 0 0 2px #a21caf55;
+  background: rgba(34,211,238,0.06);
+}
+.aceternity-active {
+  color: #22d3ee;
+  box-shadow: 0 0 0 2px #22d3ee;
+}
+.aceternity-cta {
+  border: 2px solid #a21caf;
+  color: #a21caf;
+  background: rgba(162,28,175,0.08);
+  box-shadow: 0 0 16px #a21caf55;
+  font-weight: bold;
+}
+.aceternity-cta:hover, .aceternity-cta:focus {
+  color: #fff;
+  background: #a21caf;
+  box-shadow: 0 0 24px #a21caf99;
+  border-color: #fff;
+}
+
+.aceternity-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2.2rem;
+  color: #22d3ee;
+  transition: color 0.2s;
+}
+.aceternity-close:hover, .aceternity-close:focus {
+  color: #a21caf;
+}
+
+.drop-shadow-glow {
+  text-shadow: 0 0 16px #22d3ee, 0 0 2px #a21caf;
+}
+
+@media (min-width: 769px) {
+  .aceternity-hamburger, .aceternity-menu { display: none !important; }
+}

@@ -1,49 +1,80 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './Navbar.css';
 
-const Navbar = ({ currentPage, setCurrentPage }) => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact', label: 'Contact' },
-  ];
+const navItems = [
+  { id: 'home', label: 'Home' },
+  { id: 'about', label: 'About' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'contact', label: 'Contact', cta: true },
+];
 
-  const handleClick = (pageId) => {
-    setCurrentPage(pageId);
-    setMenuOpen(false); // close menu on nav
-  };
+const Navbar = ({ currentPage, setCurrentPage }) => {
+  const [open, setOpen] = useState(false);
+
+  // Disable scroll saat menu open
+  useEffect(() => {
+    if (open) document.body.style.overflow = 'hidden';
+    else document.body.style.overflow = '';
+    return () => (document.body.style.overflow = '');
+  }, [open]);
 
   return (
-    <nav>
-      <div className="logo">ZUARR</div>
-      <button
-        className={`navbar-hamburger${menuOpen ? ' open' : ''}`}
-        aria-label="Open menu"
-        onClick={() => setMenuOpen((v) => !v)}
-      >
-        <span className="hamburger-bar" />
-        <span className="hamburger-bar" />
-        <span className="hamburger-bar" />
-      </button>
-      <ul className={`nav-links${menuOpen ? ' open' : ''}`}>
-        {navItems.map((item) => (
-          <li key={item.id}>
-            <a
-              href="#"
-              className={`${currentPage === item.id ? 'active' : ''}`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleClick(item.id);
-              }}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-      {menuOpen && <div className="nav-overlay" onClick={() => setMenuOpen(false)} />}
+    <nav className="fixed top-0 left-0 w-full z-[1000]">
+      <div className="flex justify-between items-center px-5 py-4">
+        <div className="text-cyan-400 font-bold text-xl tracking-widest drop-shadow-glow">ZUARR</div>
+        <button
+          className="aceternity-hamburger z-[1100]"
+          aria-label="Open menu"
+          onClick={() => setOpen(true)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+      </div>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="aceternity-menu"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0, transition: { duration: 0.38, ease: [0.4,0,0.2,1] } }}
+            exit={{ opacity: 0, y: 40, transition: { duration: 0.28, ease: [0.4,0,0.2,1] } }}
+          >
+            <div
+              className="absolute inset-0 z-0 aceternity-bg"
+              onClick={() => setOpen(false)}
+            />
+            <button
+              className="absolute top-5 right-6 text-3xl text-cyan-300 z-20 aceternity-close"
+              aria-label="Close menu"
+              onClick={() => setOpen(false)}
+            >×</button>
+            <ul className="relative z-10 flex flex-col items-center justify-center h-full gap-7">
+              {navItems.map((item) => (
+                <li key={item.id} className="w-full flex justify-center">
+                  <button
+                    className={
+                      "aceternity-link" +
+                      (item.cta
+                        ? " aceternity-cta"
+                        : currentPage === item.id
+                        ? " aceternity-active"
+                        : "")
+                    }
+                    onClick={() => {
+                      setCurrentPage(item.id);
+                      setOpen(false);
+                    }}
+                  >
+                    {item.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
