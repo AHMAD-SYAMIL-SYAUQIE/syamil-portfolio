@@ -295,3 +295,53 @@ body.menu-open {
   position: fixed !important;
   width: 100vw !important;
 }
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1.2rem;
+  height: 56px;
+}
+
+.navbar-logo {
+  margin: 0 auto;
+  text-align: center;
+  flex: 1 1 0;
+}
+
+@media (max-width: 768px) {
+  .navbar-inner {
+    justify-content: center;
+    position: relative;
+    padding: 0 0.5rem;
+    height: 56px;
+  }
+  .navbar-logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 0;
+    width: max-content;
+  }
+  .aceternity-hamburger {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.aceternity-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.aceternity-menu li {
+  margin: 0;
+  padding: 0;
+}

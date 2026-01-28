@@ -12,7 +12,6 @@ const navItems = [
 const Navbar = ({ currentPage, setCurrentPage }) => {
   const [open, setOpen] = useState(false);
 
-  // Disable scroll & add menu-open class saat menu open
   useEffect(() => {
     if (open) {
       document.body.classList.add('menu-open');
@@ -24,8 +23,8 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-[1000]">
-      <div className="flex justify-between items-center px-5 py-4">
-        <div className="text-cyan-400 font-bold text-xl tracking-widest drop-shadow-glow">ZUARR</div>
+      <div className="navbar-inner">
+        <div className="text-cyan-400 font-bold text-xl tracking-widest drop-shadow-glow navbar-logo">ZUARR</div>
         <button
           className="aceternity-hamburger z-[1100]"
           aria-label="Open menu"
@@ -53,9 +52,9 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
               aria-label="Close menu"
               onClick={() => setOpen(false)}
             >×</button>
-            <ul className="relative z-10 flex flex-col items-center justify-center h-full gap-7">
+            <ul>
               {navItems.map((item) => (
-                <li key={item.id} className="w-full flex justify-center">
+                <li key={item.id}>
                   <button
                     className={
                       "aceternity-link" +
