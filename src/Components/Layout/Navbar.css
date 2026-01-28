@@ -80,6 +80,10 @@ nav {
     font-size: 1.5em;
   }
 
+  .navbar-hamburger {
+    display: flex !important;
+  }
+
   .nav-links {
     gap: 15px;
     position: fixed;
@@ -98,7 +102,7 @@ nav {
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(.4,0,.2,1);
     z-index: 1102;
-    display: flex;
+    display: flex !important;
   }
   .nav-links.open {
     transform: translateX(0);
@@ -130,5 +134,9 @@ nav {
     width: 90vw;
     max-width: 100vw;
     padding: 70px 16px 16px 16px;
+    display: flex !important;
+  }
+  .navbar-hamburger {
+    display: flex !important;
   }
 }
