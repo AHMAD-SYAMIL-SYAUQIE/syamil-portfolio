@@ -15,12 +15,12 @@ nav {
 }
 
 .logo {
-  font-size: 1.7em;
+  font-size: 1.5em;
   font-weight: bold;
   color: #00f7ff;
-  text-shadow: 0 0 16px #00f7ff;
   letter-spacing: 2px;
   margin-right: 32px;
+  text-shadow: none;
 }
 
 .nav-links-desktop {
@@ -36,18 +36,19 @@ nav {
   border: none;
   font-family: 'Courier New', monospace;
   font-size: 1em;
-  padding: 8px 18px;
-  border-radius: 8px;
+  padding: 8px 12px;
+  border-radius: 0;
   cursor: pointer;
-  transition: color 0.18s, background 0.18s, box-shadow 0.18s;
+  transition: color 0.18s, border-bottom 0.18s;
   font-weight: 500;
   box-shadow: none;
+  border-bottom: 2px solid transparent;
 }
 
 .nav-link-btn:hover, .nav-link-active {
   color: #00f7ff;
-  background: rgba(0,247,255,0.10);
-  box-shadow: 0 0 6px #00f7ff33;
+  border-bottom: 2px solid #00f7ff;
+  background: none;
   font-weight: 600;
 }
 
@@ -55,13 +56,13 @@ nav {
   border: 1.5px solid #a21caf;
   color: #a21caf;
   font-weight: bold;
-  background: rgba(162,28,175,0.08);
+  background: none;
+  border-radius: 6px;
 }
 
 .nav-link-cta:hover {
   color: #fff;
   background: #a21caf;
-  box-shadow: 0 0 12px #a21caf99;
   border-color: #fff;
 }
 
@@ -315,9 +316,9 @@ body.menu-open {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(10, 14, 39, 0.95);
-  border-bottom: 1px solid rgba(0, 247, 255, 0.12);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  background: #0a0e27;
+  border-bottom: 1px solid rgba(0, 247, 255, 0.10);
+  box-shadow: none;
 }
 
 .navbar-inner {
@@ -327,5 +328,5 @@ body.menu-open {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 32px;
-  height: 64px;
+  height: 60px;
 }
