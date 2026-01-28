@@ -61,14 +61,33 @@ nav {
   border: none;
   cursor: pointer;
   z-index: 1101;
+  transition: background 0.2s;
+  border-radius: 50%;
 }
+.navbar-hamburger:hover, .navbar-hamburger:focus {
+  background: rgba(0,247,255,0.08);
+  box-shadow: 0 0 8px #00f7ff44;
+}
+
 .hamburger-bar {
   width: 28px;
   height: 3px;
   background: #00f7ff;
   margin: 4px 0;
   border-radius: 2px;
-  transition: all 0.3s;
+  transition: all 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+/* Hamburger morph to X when open */
+.navbar-hamburger.open .hamburger-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-hamburger.open .hamburger-bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0.5);
+}
+.navbar-hamburger.open .hamburger-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 @media (max-width: 768px) {

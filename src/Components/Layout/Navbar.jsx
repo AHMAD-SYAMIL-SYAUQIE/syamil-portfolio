@@ -19,7 +19,7 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
     <nav>
       <div className="logo">ZUARR</div>
       <button
-        className="navbar-hamburger"
+        className={`navbar-hamburger${menuOpen ? ' open' : ''}`}
         aria-label="Open menu"
         onClick={() => setMenuOpen((v) => !v)}
       >
