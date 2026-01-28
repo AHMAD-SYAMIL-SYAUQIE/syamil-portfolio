@@ -25,7 +25,28 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
   return (
     <nav className="fixed top-0 left-0 w-full z-[1000]">
       <div className="flex justify-between items-center px-5 py-4">
-        <div className="text-cyan-400 font-bold text-xl tracking-widest drop-shadow-glow">ZUARR</div>
+        <div className="logo text-cyan-400 font-bold text-xl tracking-widest drop-shadow-glow">ZUARR</div>
+        {/* Desktop nav menu */}
+        <ul className="aceternity-desktop-nav">
+          {navItems.map((item) => (
+            <li key={item.id}>
+              <button
+                className={
+                  "aceternity-link" +
+                  (item.cta
+                    ? " aceternity-cta"
+                    : currentPage === item.id
+                    ? " aceternity-active"
+                    : "")
+                }
+                onClick={() => setCurrentPage(item.id)}
+              >
+                {item.label}
+              </button>
+            </li>
+          ))}
+        </ul>
+        {/* Hamburger for mobile */}
         <button
           className="aceternity-hamburger z-[1100]"
           aria-label="Open menu"
@@ -53,9 +74,9 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
               aria-label="Close menu"
               onClick={() => setOpen(false)}
             >×</button>
-            <ul className="relative z-10 flex flex-col items-center justify-center h-full gap-7">
+            <ul>
               {navItems.map((item) => (
-                <li key={item.id} className="w-full flex justify-center">
+                <li key={item.id}>
                   <button
                     className={
                       "aceternity-link" +
