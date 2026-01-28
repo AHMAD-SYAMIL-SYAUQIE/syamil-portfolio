@@ -235,8 +235,8 @@ nav {
   padding: 0.5em 1em;
   border-radius: 12px;
   background: none;
-  border: none;
-  transition: color 0.2s, box-shadow 0.2s, background 0.2s;
+  border: 1.5px solid #22d3ee;
+  transition: color 0.2s, box-shadow 0.2s, background 0.2s, border-color 0.2s;
   box-shadow: 0 0 0 transparent;
   outline: none;
   position: relative;
@@ -247,20 +247,28 @@ nav {
 }
 .aceternity-link:hover, .aceternity-link:focus {
   color: #22d3ee;
-  box-shadow: 0 0 16px #22d3ee55, 0 0 2px #a21caf55;
+  box-shadow: 0 0 16px #22d3ee99, 0 0 2px #a21caf55;
   background: rgba(34,211,238,0.06);
+  border-color: #22d3ee;
 }
+.aceternity-active {
+  color: #22d3ee;
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 2px #22d3ee;
+}
+
 .aceternity-cta {
   border: 2px solid #a21caf;
   color: #a21caf;
   background: rgba(162,28,175,0.08);
-  box-shadow: 0 0 16px #a21caf55;
+  box-shadow: 0 0 16px #a21caf99;
   font-weight: bold;
 }
+
 .aceternity-cta:hover, .aceternity-cta:focus {
   color: #fff;
   background: #a21caf;
-  box-shadow: 0 0 24px #a21caf99;
+  box-shadow: 0 0 24px #a21cafcc;
   border-color: #fff;
 }
 
