@@ -7,9 +7,11 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
-  background: rgba(10, 14, 39, 0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(0, 247, 255, 0.2);
+  background: rgba(10, 14, 39, 0.95); /* lebih solid, tanpa blur */
+  /* backdrop-filter: blur(10px); */
+  border-bottom: 1px solid rgba(0, 247, 255, 0.12);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04); /* shadow ringan */
+  transition: background 0.2s;
 }
 
 .logo {
@@ -65,8 +67,8 @@ nav {
   border-radius: 50%;
 }
 .navbar-hamburger:hover, .navbar-hamburger:focus {
-  background: rgba(0,247,255,0.08);
-  box-shadow: 0 0 8px #00f7ff44;
+  background: rgba(0,247,255,0.06);
+  box-shadow: none;
 }
 
 .hamburger-bar {
@@ -142,7 +144,7 @@ nav {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.18);
     z-index: 1100;
     display: block;
   }
