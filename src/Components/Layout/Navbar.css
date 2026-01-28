@@ -19,12 +19,6 @@ nav {
   font-weight: bold;
   color: #00f7ff;
   text-shadow: 0 0 20px #00f7ff;
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
 }
 
 .nav-links {
@@ -105,19 +99,10 @@ nav {
 
   .logo {
     font-size: 1.5em;
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
   }
 
   .navbar-hamburger {
     display: flex !important;
-    position: absolute;
-    right: 18px;
-    top: 18px;
   }
 
   .nav-links {
@@ -309,42 +294,4 @@ body.menu-open {
   height: 100vh !important;
   position: fixed !important;
   width: 100vw !important;
-}
-
-.aceternity-desktop-nav {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-@media (max-width: 768px) {
-  .aceternity-desktop-nav {
-    display: none !important;
-  }
-  .logo {
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-  }
-  .aceternity-hamburger {
-    position: absolute;
-    right: 18px;
-    top: 18px;
-  }
-  .flex.justify-between.items-center {
-    justify-content: center !important;
-    position: relative;
-  }
-}
-
-@media (min-width: 769px) {
-  .aceternity-hamburger {
-    display: none !important;
-  }
 }
