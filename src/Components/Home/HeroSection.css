@@ -161,3 +161,126 @@
     height: 7px;
   }
 }
+
+.hero-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0 0 0;
+  min-height: 70vh;
+  box-sizing: border-box;
+}
+
+.hero-text {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 18px;
+  z-index: 2;
+}
+
+.hero-greeting {
+  margin-bottom: 10px;
+}
+
+.greeting-text {
+  font-size: 1.1em;
+  color: #00f7ff;
+  font-weight: 600;
+}
+
+.hero-name {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.typing-text {
+  font-size: 1.2em;
+  color: #00f7ff;
+  margin-bottom: 18px;
+  min-height: 32px;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 18px;
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .hero-section {
+    gap: 20px;
+    padding: 30px 0 0 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    padding: 24px 0 0 0;
+    min-height: 60vh;
+  }
+  .hero-text {
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+  }
+  .hero-name {
+    font-size: 2em;
+  }
+  .typing-text {
+    font-size: 1em;
+    min-height: 28px;
+  }
+  .cta-buttons {
+    justify-content: center;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    padding: 12px 0 0 0;
+    min-height: 50vh;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .hero-text {
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    width: 100%;
+    padding: 0 4px;
+  }
+  .hero-name {
+    font-size: 1.3em;
+  }
+  .typing-text {
+    font-size: 0.95em;
+    min-height: 22px;
+  }
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+}
