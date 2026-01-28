@@ -12,11 +12,14 @@ const navItems = [
 const Navbar = ({ currentPage, setCurrentPage }) => {
   const [open, setOpen] = useState(false);
 
-  // Disable scroll saat menu open
+  // Disable scroll & add menu-open class saat menu open
   useEffect(() => {
-    if (open) document.body.style.overflow = 'hidden';
-    else document.body.style.overflow = '';
-    return () => (document.body.style.overflow = '');
+    if (open) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+    return () => document.body.classList.remove('menu-open');
   }, [open]);
 
   return (
@@ -42,11 +45,11 @@ const Navbar = ({ currentPage, setCurrentPage }) => {
             exit={{ opacity: 0, y: 40, transition: { duration: 0.28, ease: [0.4,0,0.2,1] } }}
           >
             <div
-              className="absolute inset-0 z-0 aceternity-bg"
+              className="aceternity-bg"
               onClick={() => setOpen(false)}
             />
             <button
-              className="absolute top-5 right-6 text-3xl text-cyan-300 z-20 aceternity-close"
+              className="aceternity-close"
               aria-label="Close menu"
               onClick={() => setOpen(false)}
             >×</button>

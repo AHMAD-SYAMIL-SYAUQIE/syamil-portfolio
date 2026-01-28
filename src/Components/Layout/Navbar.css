@@ -196,7 +196,7 @@ nav {
 .aceternity-menu {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: 99999;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -204,16 +204,17 @@ nav {
   min-height: 100vh;
   width: 100vw;
   pointer-events: auto;
+  overflow: hidden;
+  background: none;
 }
 .aceternity-bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
   z-index: 0;
   background: linear-gradient(120deg, #0a0e27 80%, #1a1f3a 100%);
-  opacity: 0.98;
-  backdrop-filter: blur(18px) saturate(1.2);
-  /* Optional: subtle noise overlay */
-  /* background-image: url('/noise.png'); opacity: 0.99; */
+  opacity: 0.99;
+  backdrop-filter: blur(22px) saturate(1.2);
+  pointer-events: auto;
 }
 .aceternity-menu ul {
   position: relative;
@@ -222,14 +223,14 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.2rem;
+  gap: 2rem;
   margin: 0;
   padding: 0;
 }
 
 .aceternity-link {
   font-family: 'Courier New', monospace;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #fff;
   padding: 0.5em 1em;
   border-radius: 12px;
@@ -242,6 +243,7 @@ nav {
   max-width: 90vw;
   width: 90vw;
   text-align: center;
+  margin: 0 auto;
 }
 .aceternity-link:hover, .aceternity-link:focus {
   color: #22d3ee;
@@ -285,4 +287,11 @@ nav {
 
 @media (min-width: 769px) {
   .aceternity-hamburger, .aceternity-menu { display: none !important; }
+}
+
+body.menu-open {
+  overflow: hidden !important;
+  height: 100vh !important;
+  position: fixed !important;
+  width: 100vw !important;
 }
